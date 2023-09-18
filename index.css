@@ -393,3 +393,26 @@ footer {
         font-size: 14px; /* Adjust the font size for smaller screens */
     }
 }
+
+
+#chartContainer {
+    width: 80%; /* Adjust width as needed */
+    max-width: 400px;
+    height: 400px;
+     margin-bottom:none;
+    margin-left: 500px;
+  }
+
+  /* #graph{
+    display: flex;
+    justify-content: center;
+    /* justify-self: center;
+    align-items: center; */
+    /* margin-right: 400px;
+    
+  } */ 
+
+  /* #myChart{
+    display: flex;
+    justify-content: center;
+  } */
