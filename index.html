@@ -25,6 +25,8 @@
         <div class="logo">
             <a href="#">GovTrack.AI</a>
         </div>
+
+        
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
@@ -89,23 +91,34 @@
 
       <!--     search bar -->
       <div class="search-bar">
-        <input type="text" placeholder="Search...">
+        <input type="text" placeholder="Generate data....">
        
-        <a onclick="displayGraph()">Search</a>
+        <button class="button" onclick="displayGraph()">Generate</button>
         <div id="graph"style="display:none;">
             <!-- Your graph content goes here -->
             <canvas id="myChart" style="width:100%;max-width:600px;margin:auto;margin-top:40px;font-weight:bold"></canvas>
             
             <script>
             var xValues = ["Positive","Negative","Neutrals"];
-            var yValues = [65, 20, 15];
+            var yValues = generateRandomValues(3); // Generate 3 random values
             var barColors = [
-              "#b91d47",
-              "#00aba9",
-              "#2b5797",
+            "#00aba9", 
+            "#b91d47",
+            "#2b5797",
             
             ];
+            function generateRandomValues(count) {
+              var randomValues = [];
+              for (var i = 0; i < count; i++) {
+                  randomValues.push(Math.floor(Math.random() * 100)); // Generate random numbers between 0 and 100
+              }
+              return randomValues;
+          }
             
+          function updateData() {
+            yValues = generateRandomValues(3); // Generate new random values when the search is triggered
+            // Add your code here to update your chart or display the new data
+        }
             new Chart("myChart", {
               type: "pie",
               data: {
@@ -124,7 +137,7 @@
             });
             </script>
             <br>
-          <p style="text-align: center;">positve:65%<br>Negative:20%<br>Neutrals:15%</p>
+          <p style="text-align: center;">positve:65%<br>Negative:20%<br>Neutrals:15%<br>DEPARTMENT : XYZ</p>
         </div>
         </div>
     
@@ -141,19 +154,52 @@
 </div>
     <!-- animated video blog -->
 
-
     <div class="container" >
-      <div class="content" >
-          <h2>About Our Website</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac ante ac lorem dignissim aliquet.</p>
-          <p>Fusce tincidunt malesuada mi, ut vulputate lectus tincidunt non. Cras at nisi in odio sollicitudin pharetra.</p>
-          <p>Proin quis purus vitae tortor tincidunt varius. Ut commodo massa eget orci posuere suscipit.</p>
+        <div class="content" >
+            <h2>About Our Software</h2>
+            <p>GovTrack.AI, a cutting-edge software revolutionizing the way the Press Information Bureau (PIB) interacts with media narratives. GovTrack.AI is an advanced, AI-powered platform meticulously designed to offer real-time insights and efficient feedback on government policies, initiatives, and public sentiment across diverse regional languages and media channels.</p>
+            
+          </div>
+        <div class="video">
+            <!-- Embed your video here (e.g., YouTube embed code) -->
+            <iframe width="560" height="315" src="./videos/GovTrack Animation.mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+<div class="keys" style="text-align: center;">
+  <h1>SOME KEY FEATURES OF OUR SOFTWARE</h1>
+</div>
+
+    <section class="features">
+
+      <div class="feature">
+          <h3>Sentiment Analysis and Categorization</h3>
+          <p>Utilizing state-of-the-art Natural Language Processing (NLP), GovTrack.AI categorizes news stories into favorable (positive), neutral, or not favorable (negative) sentiments concerning the Government of India.</p>
       </div>
-      <div class="video">
-          <!-- Embed your video here (e.g., YouTube embed code) -->
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
-      </div>
+      <div class="feature">
+        <h3>Intuitive Dashboard and Sorting</h3>
+        <p>The user-friendly dashboard allows easy navigation and sorting of news clippings and video segments based on tonality, edition, and other relevant parameters, providing a comprehensive view of media coverage.</p>
+    </div>
+    <div class="feature">
+      <h3>Multi-Lingual Media Monitoring</h3>
+      <p>GovTrack.AI comprehensively monitors over 200 regional media websites, analyzing news articles in various Indian languages such as Hindi, Urdu, Punjabi, Gujarati, Marathi, Telugu, and more.</p>
   </div>
+      <div class="feature">
+          <h3>Effortless E-Paper Scanning</h3>
+          <p>The software employs Optical Character Recognition (OCR) to scan and extract relevant news clippings from e-papers, simplifying the tracking of news articles pertaining to the government.</p>
+      </div>
+      <div class="feature">
+        <h3>Video Segment Analysis</h3>
+        <p>GovTrack.AI efficiently processes video content, utilizing closed captioning or audio-to-text features to identify and categorize news segments related to the Government of India.</p>
+    </div>
+    <div class="feature">
+      <h3>Real-Time Notifications</h3>
+      <p> For negative news stories, the system triggers instant notifications to the concerned PIB officers, enabling prompt responses and proactive engagement with media narratives.</p>
+  </div>
+
+
+      <!-- Add more features here -->
+  </section>
 
      <!-- Footer section -->
      <footer>
@@ -179,7 +225,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2023 Your Website Name. All rights reserved.
+            &copy; 2023 GovTrack. All rights reserved.
         </div>
     </footer>
 
@@ -192,3 +238,4 @@
 
 </body>
 </html>
+
